@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
-function AddFriend({handleAddFriend, handleFriendCount}){
+function AddFriend({handleAddFriend, handleFriendIncrease}){
     const [ newFriend, setNewFriend ] = useState({
         name: '',
         age: 0,
@@ -19,7 +19,7 @@ function AddFriend({handleAddFriend, handleFriendCount}){
             console.log(err);
         })
         handleAddFriend();
-        handleFriendCount();
+        handleFriendIncrease();
     }
 
     const handleChange = e => {
