@@ -9,9 +9,7 @@ import Friends from './components/Protected/Friends';
 function App() {
   return (
     <div className="App">
-      <Route exact path='/'>
-        <Login/>
-      </Route>
+      <Route exact path='/' component={Login}/>
       <PrivateRoute exact path='/friends' component={Friends}/>
     </div>
   );
