@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 
 import Login from './components/Login';
+import Friends from './components/Protected/Friends';
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <Route exact path='/'>
         <Login/>
       </Route>
+      <PrivateRoute exact path='/friends' component={Friends}/>
     </div>
   );
 }

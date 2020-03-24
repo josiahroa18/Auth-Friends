@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import '../App.css';
+import { useHistory } from 'react-router-dom';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import './Login.css';
 
 function Login(){
+    const history = useHistory();
     const [ credentials, setCredentials ] = useState({
         username: '',
         password: ''
-    })
-
+    });
     const [ error, setError ] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/login', credentials)
+        axiosWithAuth().post('/api/login', credentials)
         .then(res => {
             setError(false);
-            localStorage.setItem('token', res.data.payload);
+            window.localStorage.setItem('token', res.data.payload);
+            history.push('/friends');
         })
-        .catch(err => {
+        .catch(() => {
             setError(true);
         })
+
+        // Reset form and state
         e.target.reset();
         setCredentials({
             username: '',
