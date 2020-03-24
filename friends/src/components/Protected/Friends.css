@@ -1,0 +1,49 @@
+.fetching-container{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.friends-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.add-friend-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.add-friend-container h1{
+    font-size: 40px;
+}
+
+.add-friend-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
