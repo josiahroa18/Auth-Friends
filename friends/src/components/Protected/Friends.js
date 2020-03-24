@@ -10,6 +10,7 @@ function Friends(){
     const [ friends, setFriends ] = useState([]);
     const [ isFetching, setIsFetching ] = useState(false);
     const [ addFriend, setAddFriend ] = useState(false);
+    const [ friendCount, setFriendCount ] = useState(0);
 
     // Initialize data on initial render
     useEffect(() => {
@@ -17,16 +18,21 @@ function Friends(){
         axiosWithAuth().get('/api/friends')
         .then(res => {
             setFriends(res.data);
+            setFriendCount(res.data.length);
             setIsFetching(false);
         })
         .catch(err => {
             console.log(err);
             setIsFetching(false);
         })
-    }, [])
+    }, [friendCount])
 
     const handleAddFriend = () => {
-        setAddFriend(true)
+        setAddFriend(!addFriend);
+    }
+
+    const handleFriendCount = () => {
+        setFriendCount(friendCount + 1);
     }
 
     return(
@@ -44,7 +50,12 @@ function Friends(){
                     })}
                 </section>
             )}
-            {addFriend && <AddFriend/>}
+            {addFriend && (
+                <AddFriend 
+                    handleAddFriend={handleAddFriend} 
+                    handleFriendCount={handleFriendCount}
+                />
+            )}
         </div>
     );
 }
