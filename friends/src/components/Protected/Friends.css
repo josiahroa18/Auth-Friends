@@ -1,0 +1,78 @@
+.friends-container{
+    display: flex;
+    justify-content: center;
+    /* width: 100%; */
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.card{
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    right: 15px;
+    color: red;
+    cursor: pointer;
+}
+
+.card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.add-friend-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.add-friend-container h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.add-friend-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-friend-container form label{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.add-friend-container form input{
+    height: 30px;
+    font-size: 20px;
+}
+
+.add-friend-container form button{
+    margin: 20px 0;
+    font-size: 20px;
+    padding: 5px 20px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.add-friend-container form button:hover{
+    transform: scale(1.05);
+}
